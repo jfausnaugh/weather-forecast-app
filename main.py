@@ -24,3 +24,14 @@ if place:
         figure = px.line(x=dates, y=temperatures,
                          labels={"x": "Dates", "y": "Temperature (C)"})
         st.plotly_chart(figure)
+
+    if option == "Sky":
+        sky_conditions = [dictionary["weather"][0]["main"] for dictionary
+                          in filtered_data]
+        images = {"Clear": "images/clear.png",
+                  "Clouds": "images/cloud.png",
+                  "Rain": "images/rain.png",
+                  "Snow": "images/snow.png"}
+        image_paths = [images[condition] for condition in sky_conditions]
+        captions = [dictionary["dt_txt"] for dictionary in filtered_data]
+        st.image(image_paths, width=115, caption=captions)
