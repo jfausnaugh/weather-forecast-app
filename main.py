@@ -5,7 +5,8 @@ from backend import get_data
 # Add title, text input, slider, select-box and sub-header
 
 st.title("Weather Forecast for the Next 1 to 5 Days")
-place = st.text_input("Place: ")
+place = st.text_input("Place: ",
+                      help="Enter a city or a State to get the forecast data.")
 days = st.slider("Forecast Days", min_value=1, max_value=5,
                  help="Select the number of days to be forecasted.")
 option = st.selectbox("Select data to view", ("Temperature", "Sky"))
