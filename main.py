@@ -1,5 +1,5 @@
 import streamlit as st
-import plotly.expres as px
+import plotly.express as px
 
 # Add title, text input, slider, select-box and sub-header
 
